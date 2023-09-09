@@ -1,0 +1,17 @@
+.carousel {
+
+  .carousel-container {
+    display: flex;
+    height: 400px;
+    width: 600px;
+    overflow: hidden;
+  }
+
+  .carousel-item  {
+    height: 400px;
+img{
+  width: 600px;
+  height:100%;
+}
+  }
+}

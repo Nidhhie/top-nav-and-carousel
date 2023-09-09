@@ -1,0 +1,71 @@
+.top-navigation {
+  background-color: #333; /* Dark gray background color */
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .main-menu {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+
+    .menu-item {
+      padding: 5px;
+      color: white; /* White text color */
+      cursor: pointer;
+      user-select: none;
+
+      &:hover {
+        background-color: #555; /* Hover color */
+      }
+    }
+
+    .dropdown {
+      position: relative;
+
+      .menu-item {
+        padding: 5px;
+        color: white; /* White text color */
+        cursor: pointer;
+        user-select: none;
+
+        &:hover {
+          background-color: #555; /* Hover color */
+        }
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #333;
+        top: 100%;
+        left: 0;
+        min-width: 160px;
+        z-index: 1;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+
+        .menu-item {
+          padding: 10px;
+          color: white;
+          text-align: left;
+          cursor: pointer;
+          border-bottom: 1px solid #555;
+
+          &:last-child {
+            border-bottom: none;
+          }
+
+          &:hover {
+            background-color: #555; /* Hover color */
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Show the dropdown content when the "More" menu is open */
+.top-navigation .main-menu .dropdown:hover .dropdown-content {
+  display: block;
+}
