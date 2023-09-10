@@ -10,7 +10,7 @@ import img5 from './assets/img5.png'
 
 
 const images  = [
-  img1, img2, img3, img4,img5
+  img1, img2, img3, img4,img5,img1, img2, img3, img4,img5
 ]
 function App() {
   return (

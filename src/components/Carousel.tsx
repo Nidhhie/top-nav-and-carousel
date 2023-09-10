@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import CarouselItem from './CarouselItem';
 
 const Carousel = ({ images }:{images: string[]}) => {
   const [currentItem, setCurrentItem] = useState(0);
@@ -8,41 +9,71 @@ const Carousel = ({ images }:{images: string[]}) => {
   };
 
   const handleNext = () => {
-    setCurrentItem((currentItem + 1) % images.length);
-  };
+    if(currentItem < images.length -1 ){
+  setCurrentItem(currentItem + 1);
+  }
+  else{
+    setCurrentItem(0)
+  }
+}
 
-  useEffect(() => {
-    document.querySelector('.carousel-container')?.scrollTo({
-        left: currentItem * 600,
-        behavior: 'smooth',
-      });
-  }, [currentItem])
-
+useEffect(() => {
+  const container:any = document.querySelector('.carousel-container')
+  container.style.transform =  currentItem > 7 ?  `translateX(-${220-currentItem * 10}vw)` : `translateX(-${currentItem * 10}vw)`
+},[currentItem])
+  
   const handlePrev = () => {
-    setCurrentItem((currentItem - 1 + images.length) % images.length);
+    if(currentItem - 1 > 0){
+    setCurrentItem(currentItem-1);
+    }
+    else{
+      setCurrentItem(images.length-1)
+    }
   };
 
-  useEffect(() => {
-    // Automatically switch to the next item after a delay (e.g., every 5 seconds)
-    const interval = setInterval(() => {
-      handleNext();
-    }, 5000); // Change item every 5 seconds
+  // useEffect(() => {
+  //   // Automatically switch to the next item after a delay (e.g., every 5 seconds)
+  //   const interval = setInterval(() => {
+  //     handleNext();
+  //   }, 5000); // Change item every 5 seconds
 
-    return () => clearInterval(interval);
-  }, [currentItem]);
-
+  //   return () => clearInterval(interval);
+  // }, [currentItem]);
   return (
     <div className="carousel">
       <div className="carousel-container">
+        <CarouselItem
+        imageUrl={images[images.length-2]}
+        imageIdx={images.length-2}
+        seletecIdx={currentItem}
+        onItemClick={handleItemClick} 
+        />
+        <CarouselItem
+        imageUrl={images[images.length-1]}
+        imageIdx={images.length-1}
+        seletecIdx={currentItem}
+        onItemClick={handleItemClick} 
+        />
         {images.map((item, index) => (
-          <div
-            key={index}
-            className={`carousel-item ${index === currentItem ? 'active' : ''}`}
-            onClick={() => handleItemClick(index)}
-          >
-            <img src={item} alt={`Item ${index}`} />
-          </div>
+             <CarouselItem
+             imageUrl={item}
+             imageIdx={index}
+             seletecIdx={currentItem}
+             onItemClick={handleItemClick} 
+             />
         ))}
+       <CarouselItem
+        imageUrl={images[1]}
+        imageIdx={1}
+        seletecIdx={currentItem}
+        onItemClick={handleItemClick} 
+        />
+      <CarouselItem
+        imageUrl={images[0]}
+        imageIdx={0}
+        seletecIdx={currentItem}
+        onItemClick={handleItemClick} 
+        />
       </div>
       <button className="prev-button" onClick={handlePrev}>Previous</button>
       <button className="next-button" onClick={handleNext}>Next</button>
