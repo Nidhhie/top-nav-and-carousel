@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import  { useState, useEffect } from 'react';
 import CarouselItem from './CarouselItem';
 
 const Carousel = ({ images }:{images: string[]}) => {
@@ -19,8 +19,9 @@ const Carousel = ({ images }:{images: string[]}) => {
 
 useEffect(() => {
   const container:any = document.querySelector('.carousel-container')
-  container.style.transform =  currentItem + 3 > images.length ?  `translateX(-${(images.length + 2) *10+(((currentItem+3)%10) * 10)}vw)` : `translateX(-${currentItem * 10}vw)`
-},[currentItem])
+   let transform =  currentItem + 3 > images.length ?  -((images.length + 2)*10 + (currentItem+3)%10* 10) : -currentItem * 10
+  container.style.transform =  `translateX(${transform}vw)`
+},[currentItem, images])
   
   const handlePrev = () => {
     if(currentItem - 1 > 0){
