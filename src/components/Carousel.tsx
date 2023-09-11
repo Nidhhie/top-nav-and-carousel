@@ -19,7 +19,7 @@ const Carousel = ({ images }:{images: string[]}) => {
 
 useEffect(() => {
   const container:any = document.querySelector('.carousel-container')
-  container.style.transform =  currentItem > 7 ?  `translateX(-${220-currentItem * 10}vw)` : `translateX(-${currentItem * 10}vw)`
+  container.style.transform =  currentItem + 3 > images.length ?  `translateX(-${(images.length + 2) *10+(((currentItem+3)%10) * 10)}vw)` : `translateX(-${currentItem * 10}vw)`
 },[currentItem])
   
   const handlePrev = () => {

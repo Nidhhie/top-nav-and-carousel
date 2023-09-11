@@ -19,6 +19,7 @@ const CarouselItem: FC<CarouselItemProps> = ({
       onClick={() => onItemClick(imageIdx)}
     >
       <img src={imageUrl} alt={`Item ${imageIdx}`} />
+      <div> Image {imageIdx} </div>
     </div>
   );
 };
