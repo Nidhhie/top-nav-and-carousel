@@ -5,11 +5,11 @@ const MoreMenu: React.FC<{ items: string[] }> = ({ items }) => {
  
   return (
     <div className="menu-item dropdown">
-      <span onClick={() => setIsMoreMenuOpen(!isMoreMenuOpen)}>More</span>
+      <span onClick={() => setIsMoreMenuOpen(!isMoreMenuOpen)}>MORE</span>
       {isMoreMenuOpen && (
         <div className="dropdown-content">
           {items.map((item, index) => (
-            <div key={index} className="menu-item">{item}</div>
+            <div key={index} className="menu-item">{item.toUpperCase()}</div>
           ))}
         </div>
       )}

@@ -1,2 +1,25 @@
 @import 'components/topNavigation.scss';
-@import 'components/carousel.scss'
+@import 'components/carousel.scss';
+
+body {
+    margin:0;
+    font-family: 'Lato', sans-serif;
+    overflow-x: hidden
+}
+
+.heading {
+    font-size: 42px;
+    text-align: center;
+    margin-top: 6vh;
+    margin-bottom: 10px;
+
+}
+
+.sub-heading{
+    font-size: 24px;
+    text-align: center;
+}
+
+.bold{
+    font-weight: bold;
+}

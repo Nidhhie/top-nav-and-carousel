@@ -1,5 +1,5 @@
 .top-navigation {
-  background-color: #333; /* Dark gray background color */
+  background-color: #2F302C;
   padding: 10px;
   display: flex;
   justify-content: space-between;
@@ -11,13 +11,21 @@
     align-items: center;
 
     .menu-item {
-      padding: 5px;
-      color: white; /* White text color */
+      padding: 12px;
+      color: white; 
+      gap: 44px;
+      display: flex;
+      flex: 1 0 0;
       cursor: pointer;
       user-select: none;
+      font-size: 13px;
+      &.logo{    
+        min-width: 80px;
+        font-size: 18px;
+      }
 
       &:hover {
-        background-color: #555; /* Hover color */
+        background-color: #555;
       }
     }
 
@@ -26,12 +34,12 @@
 
       .menu-item {
         padding: 5px;
-        color: white; /* White text color */
+        color: white; 
         cursor: pointer;
         user-select: none;
 
         &:hover {
-          background-color: #555; /* Hover color */
+          background-color: #555; 
         }
       }
 
@@ -57,10 +65,21 @@
           }
 
           &:hover {
-            background-color: #555; /* Hover color */
+            background-color: #555; 
           }
         }
       }
+    }
+    .search-input{
+      min-width: 140px;
+      background: transparent;
+      border: 0;
+      border-bottom: 1px solid white;
+      color: white;
+      outline: none;
+      box-shadow: none;
+      padding: 4px;
+
     }
   }
 }

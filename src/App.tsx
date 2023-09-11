@@ -16,6 +16,9 @@ function App() {
   return (
     <div className="App">
      <TopNavigation/>
+     <div className='heading bold'> Featured Products </div>
+     <div className='sub-heading'> Explore and discover a variety of products </div>
+
      <Carousel images={images}/>
     </div>
   );

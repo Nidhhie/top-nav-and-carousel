@@ -15,11 +15,10 @@ const CarouselItem: FC<CarouselItemProps> = ({
 }) => {
   return (
     <div
-      className={`carousel-item ${imageIdx === seletecIdx  ? 'active' : ''}`}
+      className={`carousel-item ${imageIdx === seletecIdx  ? 'active' :(imageIdx === seletecIdx+1 || imageIdx === seletecIdx-1 || imageIdx + seletecIdx === 9) ? 'sibling-active' : ''}`}
       onClick={() => onItemClick(imageIdx)}
     >
       <img src={imageUrl} alt={`Item ${imageIdx}`} />
-      <div> Image {imageIdx} </div>
     </div>
   );
 };
