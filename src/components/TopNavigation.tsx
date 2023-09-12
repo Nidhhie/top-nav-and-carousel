@@ -32,7 +32,7 @@ const TopNavigation: React.FC = () => {
 
       setVisibleItems(newVisibleItems); 
     }
-  },[menuItems]);
+  },[]);
 
   useEffect(() => {
     updateVisibleItems();
@@ -42,7 +42,7 @@ const TopNavigation: React.FC = () => {
     return () => {
       window.removeEventListener('resize', updateVisibleItems);
     };
-  }, [menuItems, updateVisibleItems]);
+  }, [updateVisibleItems]);
 
   return (
     <div className="top-navigation" ref={menuRef}>
