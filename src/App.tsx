@@ -7,6 +7,7 @@ import img2 from './assets/img2.png'
 import img3 from './assets/img3.png'
 import img4 from './assets/img4.png'
 import img5 from './assets/img5.png'
+import { CarouselProvider } from './Context/CarouselContext';
 
 
 const images  = [
@@ -18,8 +19,9 @@ function App() {
      <TopNavigation/>
      <div className='heading bold'> Featured Products </div>
      <div className='sub-heading'> Explore and discover a variety of products </div>
-
-     <Carousel images={images}/>
+     <CarouselProvider images={images}>
+     <Carousel/>
+     </CarouselProvider>
     </div>
   );
 }

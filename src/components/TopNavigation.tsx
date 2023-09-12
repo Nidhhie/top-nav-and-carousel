@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import MoreMenu from './MoreMenu';
+import SearchBar from './SearchBar';
 
 const menuItems = [
   'Home', 'Electronics', 'Books', 'Music', 'Movies',
@@ -53,7 +54,7 @@ const TopNavigation: React.FC = () => {
         {menuItems.length > visibleItems.length && (
           <MoreMenu items={menuItems.slice(visibleItems.length)}/>
         )}
-        <input type="search" placeholder='Search something' className='search-input'/> 
+        <SearchBar/>
       </div>
     </div>
   );
