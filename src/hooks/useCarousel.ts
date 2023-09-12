@@ -1,9 +1,7 @@
-import  { useRef } from 'react';
 import { useCarouselContext } from '../Context/CarouselContext';
 
 const useCarousel = () => {
-  const prevItem = useRef<number>(-1)
-  const {currentItem, setCurrentItem, images} = useCarouselContext();
+  const {currentItem, setCurrentItem, images, prevItem} = useCarouselContext();
 
   const handleItemClick = (index:number) => {
     prevItem.current = currentItem

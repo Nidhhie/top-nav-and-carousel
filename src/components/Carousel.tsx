@@ -10,6 +10,7 @@ const Carousel = () => {
   const { prevItem, handleNext} = useCarousel();
 
 useEffect(() => {
+  console.log(prevItem, currentItem)
   if(containerRef.current){
    let transform =  currentItem + 3 > images.length ?  -((images.length + 2)*10 + (currentItem+3)%10* 21) : -currentItem * 15
    containerRef.current.style.transform =  `translateX(calc(${transform}vw - 30px))`
